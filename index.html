@@ -3,2072 +3,1350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ritu Rajput | Cloud Architect & Full Stack Developer</title>
+    <title>Ritu Rajput | Cloud Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cloud-blue: #E3F2FD;
-            --deep-blue: #0c408e;
-            --accent-blue: #42A5F5;
-            --electric-blue: #00D1FF;
-            --dark-blue: #082032;
-            --neon-blue: #00F5FF;
-            --light-gray: #F5F7FA;
-            --white: #FFFFFF;
-            --shadow: 0 4px 20px rgba(13, 71, 161, 0.1);
-            --neon-shadow: 0 0 10px rgba(0, 245, 255, 0.7);
+            --github-black: #0d1117;
+            --github-dark-gray: #161b22;
+            --github-light-gray: #21262d;
+            --github-blue: #58a6ff;
+            --github-green: #3fb950;
+            --github-purple: #8957e5;
+            --github-orange: #ffa657;
+            --github-text: #c9d1d9;
+            --github-text-secondary: #8b949e;
+            --github-border: #30363d;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
         }
-        
+
         body {
-            background-color: #0a192f;
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        /* Cyberpunk Glow Effect */
-        .cyber-glow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(0, 209, 255, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: -2;
-        }
-        
-        /* Particle Background */
-        .particles-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        
-        .particle {
-            position: absolute;
-            background: var(--electric-blue);
-            border-radius: 50%;
-            opacity: 0.6;
-            filter: blur(1px);
-        }
-        
-        /* Circuit Grid Background */
-        .circuit-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(rgba(13, 71, 161, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(13, 71, 161, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -3;
-            opacity: 0.3;
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 3rem;
-            background: rgba(10, 25, 47, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(66, 165, 245, 0.2);
-        }
-        
-        .logo h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            color: var(--electric-blue);
-            text-shadow: var(--neon-shadow);
-            letter-spacing: 1px;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            font-size: 1.1rem;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--electric-blue);
-            transition: width 0.3s ease;
-            box-shadow: var(--neon-shadow);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 5rem 5rem;
-            position: relative;
+            background-color: var(--github-black);
+            color: var(--github-text);
+            line-height: 1.5;
             overflow: hidden;
         }
-        
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+
+        .container {
+            display: flex;
+            height: 100vh;
         }
-        
-        .hero-text h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-            line-height: 1.2;
-            font-weight: 800;
+
+        /* Sidebar */
+        .sidebar {
+            width: 300px;
+            background-color: var(--github-dark-gray);
+            border-right: 1px solid var(--github-border);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
         }
-        
-        .hero-text h1 span {
-            color: var(--electric-blue);
-            text-shadow: 0 0 10px rgba(0, 245, 255, 0.7);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .hero-text h1 span::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--electric-blue);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s ease;
-        }
-        
-        .hero-text h1:hover span::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-        
-        .hero-text p {
-            font-size: 1.3rem;
+
+        .profile {
+            text-align: center;
             margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.8);
-            opacity: 0.9;
-            max-width: 600px;
         }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .btn {
-            padding: 0.8rem 1.8rem;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-primary {
-            background: var(--electric-blue);
-            color: var(--dark-blue);
-            box-shadow: 0 4px 15px rgba(0, 209, 255, 0.4);
-            border: 2px solid var(--electric-blue);
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-            z-index: -1;
-        }
-        
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 245, 255, 0.6);
-        }
-        
-        .btn-secondary {
-            border: 2px solid var(--electric-blue);
-            color: var(--electric-blue);
-            background: transparent;
-        }
-        
-        .btn-secondary:hover {
-            background: var(--electric-blue);
-            color: var(--dark-blue);
-            box-shadow: 0 0 10px var(--electric-blue), 0 0 20px var(--electric-blue);
-        }
-        
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            perspective: 1000px;
-        }
-        
-        .profile-img-container {
-            position: relative;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            transform-style: preserve-3d;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0) rotateY(0); }
-            50% { transform: translateY(-20px) rotateY(10deg); }
-            100% { transform: translateY(0) rotateY(0); }
-        }
-        
+
         .profile-img {
-            width: 100%;
-            height: 100%;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 10px solid rgba(66, 165, 245, 0.2);
-            box-shadow: 0 0 30px var(--electric-blue);
-            position: relative;
-            z-index: 2;
-            transition: all 0.5s ease;
+            border: 3px solid var(--github-blue);
+            margin-bottom: 1rem;
         }
-        
-        .tech-icons {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            animation: rotateIcons 30s linear infinite;
+
+        .profile h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--github-text);
         }
-        
-        .tech-icon {
-            position: absolute;
-            width: 70px;
-            height: 70px;
-            background: rgba(10, 25, 47, 0.8);
-            border-radius: 50%;
+
+        .profile p {
+            color: var(--github-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-link {
+            color: var(--github-text);
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+
+        .profile-link:hover {
+            color: var(--github-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            color: var(--github-text);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
-            font-size: 2rem;
-            color: var(--electric-blue);
-            border: 2px solid var(--electric-blue);
-            transition: all 0.3s ease;
+            gap: 0.75rem;
+            transition: all 0.2s;
         }
-        
-        .tech-icon:hover {
-            transform: scale(1.2) translateZ(20px);
-            box-shadow: 0 0 25px var(--electric-blue);
-        }
-        
-        @keyframes rotateIcons {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Sections */
-        section {
-            padding: 5rem;
-            max-width: 1600px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .section-title {
+
+        .nav-link i {
+            width: 20px;
             text-align: center;
-            margin-bottom: 4rem;
         }
-        
-        .section-title h2 {
-            font-size: 3rem;
-            color: var(--white);
-            position: relative;
-            display: inline-block;
-            font-weight: 700;
-            font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+
+        .nav-link:hover {
+            background-color: var(--github-light-gray);
         }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--electric-blue);
-            border-radius: 2px;
-            box-shadow: var(--neon-shadow);
+
+        .nav-link.active {
+            background-color: var(--github-light-gray);
+            font-weight: 600;
+            color: var(--github-blue);
         }
-        
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+
+        .contact-info {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--github-border);
+        }
+
+        .contact-item {
+            display: flex;
             align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
         }
-        
-        .about-text p {
+
+        .contact-item i {
+            color: var(--github-text-secondary);
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: var(--github-text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--github-blue);
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tab-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* About Tab */
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            margin-bottom: 2rem;
+        }
+
+        .about-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--github-text);
+        }
+
+        .about-header p {
+            color: var(--github-text-secondary);
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
         }
-        
+
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
+            gap: 1rem;
+            margin-top: 2rem;
         }
-        
+
         .skill-category {
-            background: rgba(13, 71, 161, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(66, 165, 245, 0.2);
-            transition: all 0.3s ease;
+            background-color: var(--github-dark-gray);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 1rem;
         }
-        
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 209, 255, 0.3);
-            border-color: var(--electric-blue);
-        }
-        
+
         .skill-category h3 {
-            color: var(--electric-blue);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--github-blue);
         }
-        
+
         .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 0.5rem;
         }
-        
+
         .skill {
-            background: rgba(66, 165, 245, 0.1);
-            color: var(--electric-blue);
-            padding: 0.5rem 1rem;
+            background-color: var(--github-light-gray);
+            color: var(--github-text);
+            padding: 0.25rem 0.5rem;
             border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(66, 165, 245, 0.3);
-            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            border: 1px solid var(--github-border);
         }
-        
-        .skill:hover {
-            background: var(--electric-blue);
-            color: var(--dark-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 0 10px var(--electric-blue);
-        }
-        
-        /* Experience Section */
+
+        /* Experience Tab */
         .experience-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
-        
+
         .experience-card {
-            background: rgba(13, 71, 161, 0.1);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(66, 165, 245, 0.2);
-            transition: all 0.5s ease;
-            opacity: 0;
-            transform: translateY(50px);
+            background-color: var(--github-dark-gray);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 1.5rem;
         }
-        
-        .experience-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .experience-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 209, 255, 0.3);
-            border-color: var(--electric-blue);
-        }
-        
+
         .exp-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
         }
-        
+
         .exp-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(66, 165, 245, 0.1);
+            width: 40px;
+            height: 40px;
+            background-color: var(--github-light-gray);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--electric-blue);
-            font-size: 1.2rem;
-            border: 1px solid var(--electric-blue);
-            box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+            color: var(--github-blue);
+            font-size: 1rem;
+            border: 1px solid var(--github-border);
         }
-        
+
         .exp-title h3 {
-            color: var(--white);
-            margin-bottom: 0.3rem;
-            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--github-text);
         }
-        
+
         .exp-title p {
-            color: var(--electric-blue);
-            font-weight: 500;
-        }
-        
-        .exp-date {
-            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
+            color: var(--github-text-secondary);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--github-text-secondary);
             margin-bottom: 1rem;
         }
-        
+
         .exp-description {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.7;
+            font-size: 0.95rem;
+            color: var(--github-text);
         }
-        
-        /* Projects Section */
+
+        /* Projects Tab */
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
+
         .project-card {
-            background: rgba(13, 71, 161, 0.1);
-            border-radius: 10px;
+            background-color: var(--github-dark-gray);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(66, 165, 245, 0.2);
-            transition: all 0.5s ease;
-            opacity: 0;
-            transform: translateY(50px);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        
-        .project-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
+
         .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 209, 255, 0.3);
-            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--github-blue);
         }
-        
+
         .project-image {
-            height: 200px;
+            height: 150px;
             background-size: cover;
             background-position: center;
             position: relative;
-            transition: all 0.5s ease;
+            border-bottom: 1px solid var(--github-border);
         }
-        
-        .project-card:hover .project-image {
-            transform: scale(1.05);
-        }
-        
-        .project-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(13, 71, 161, 0.1), rgba(13, 71, 161, 0.7));
-        }
-        
+
         .project-tech {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 0.75rem;
+            right: 0.75rem;
             display: flex;
             gap: 0.5rem;
-            z-index: 2;
         }
-        
+
         .tech-badge {
-            background: rgba(10, 25, 47, 0.8);
-            padding: 0.3rem 0.8rem;
+            background-color: var(--github-black);
+            padding: 0.25rem 0.5rem;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--electric-blue);
-            border: 1px solid var(--electric-blue);
-            box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+            font-size: 0.7rem;
+            color: var(--github-blue);
+            border: 1px solid var(--github-border);
         }
-        
+
         .project-info {
-            padding: 1.5rem;
+            padding: 1.25rem;
         }
-        
+
         .project-info h3 {
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--github-blue);
         }
-        
+
         .project-info p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            color: var(--github-text-secondary);
+            margin-bottom: 1rem;
+            min-height: 60px;
         }
-        
+
         .project-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
         }
-        
+
         .project-link {
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .demo-link {
-            background: var(--electric-blue);
-            color: var(--dark-blue);
-            font-weight: 500;
+            background-color: var(--github-green);
+            color: white;
         }
-        
+
+        .demo-link:hover {
+            background-color: #2ea043;
+        }
+
         .code-link {
-            border: 1px solid var(--electric-blue);
-            color: var(--electric-blue);
-            background: transparent;
+            background-color: var(--github-light-gray);
+            color: var(--github-text);
+            border: 1px solid var(--github-border);
         }
-        
-        .demo-link:hover, .code-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px var(--electric-blue);
+
+        .code-link:hover {
+            background-color: #30363d;
+            border-color: #8b949e;
         }
-        
-        /* Featured Project */
-        .featured-project {
-            position: relative;
-            border: 2px solid var(--electric-blue);
-            box-shadow: 0 0 30px var(--electric-blue);
-        }
-        
-        .featured-project::before {
-            content: 'Featured';
-            position: absolute;
-            top: 20px;
-            right: -10px;
-            background: var(--electric-blue);
-            color: var(--dark-blue);
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.8rem;
-            z-index: 3;
-            box-shadow: 0 0 10px var(--electric-blue);
-        }
-        
-        .featured-project .project-info ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-        
-        .featured-project .project-info ul li {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
-        
-        .featured-project .project-info ul li::before {
-            content: '▹';
-            color: var(--electric-blue);
-            position: absolute;
-            left: -1.5rem;
-        }
-        
-        /* Certifications Section */
+
+        /* Certifications Tab */
         .certs-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        
+
         .cert-card {
-            background: rgba(13, 71, 161, 0.1);
-            border-radius: 10px;
+            background-color: var(--github-dark-gray);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(66, 165, 245, 0.2);
-            transition: all 0.5s ease;
-            opacity: 0;
-            transform: translateY(50px);
+            transition: transform 0.2s;
         }
-        
-        .cert-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
+
         .cert-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 209, 255, 0.3);
-            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+            border-color: var(--github-blue);
         }
-        
+
         .cert-header {
-            background: linear-gradient(135deg, rgba(13, 71, 161, 0.5), rgba(0, 209, 255, 0.3));
+            background-color: var(--github-light-gray);
             padding: 1.5rem;
-            color: var(--white);
             text-align: center;
-            border-bottom: 1px solid var(--electric-blue);
+            border-bottom: 1px solid var(--github-border);
         }
-        
+
         .cert-header i {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--electric-blue);
-            text-shadow: 0 0 10px var(--electric-blue);
+            color: var(--github-blue);
         }
-        
+
+        .cert-header h3 {
+            font-size: 1.1rem;
+            color: var(--github-text);
+        }
+
         .cert-body {
             padding: 1.5rem;
         }
-        
+
         .cert-body h3 {
-            color: var(--white);
+            font-size: 1rem;
             margin-bottom: 0.5rem;
-            font-weight: 600;
+            color: var(--github-text);
         }
-        
+
         .cert-body p {
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            color: var(--github-text-secondary);
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
         }
-        
+
         .view-cert {
             display: inline-block;
             padding: 0.5rem 1rem;
-            background: var(--electric-blue);
-            color: var(--dark-blue);
-            border-radius: 5px;
+            background-color: var(--github-blue);
+            color: white;
+            border-radius: 6px;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            transition: background-color 0.2s;
         }
-        
+
         .view-cert:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px var(--electric-blue);
+            background-color: #4a93e6;
         }
-        
-        /* Contact Section */
+
+        /* Contact Tab */
         .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
         }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: rgba(13, 71, 161, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(66, 165, 245, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--electric-blue);
-            box-shadow: 0 10px 25px rgba(0, 209, 255, 0.3);
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(66, 165, 245, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--electric-blue);
-            font-size: 1.2rem;
-            border: 1px solid var(--electric-blue);
-            box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
-        }
-        
-        .contact-details h3 {
-            color: var(--white);
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-        
-        .contact-details a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-details a:hover {
-            color: var(--electric-blue);
-            text-shadow: 0 0 10px var(--electric-blue);
-        }
-        
+
         .contact-form {
-            background: rgba(13, 71, 161, 0.1);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(66, 165, 245, 0.2);
+            background-color: var(--github-dark-gray);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 1.5rem;
         }
-        
+
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--electric-blue);
-            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--github-text);
         }
-        
+
         .form-control {
             width: 100%;
-            padding: 0.8rem 1rem;
-            border: 1px solid rgba(66, 165, 245, 0.3);
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: rgba(10, 25, 47, 0.5);
-            color: var(--white);
+            padding: 0.75rem;
+            background-color: var(--github-black);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            color: var(--github-text);
+            font-size: 0.9rem;
         }
-        
+
         .form-control:focus {
             outline: none;
-            border-color: var(--electric-blue);
-            box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.2);
-            background: rgba(10, 25, 47, 0.8);
+            border-color: var(--github-blue);
+            box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.15);
         }
-        
+
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
         }
-        
+
         .submit-btn {
-            background: var(--electric-blue);
-            color: var(--dark-blue);
+            background-color: var(--github-green);
+            color: white;
             border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.2s;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px var(--electric-blue);
+            background-color: #2ea043;
         }
-        
-        /* Footer */
-        footer {
-            background: linear-gradient(to top, rgba(13, 71, 161, 0.3), transparent);
-            color: var(--white);
-            padding: 3rem;
-            text-align: center;
-            border-top: 1px solid rgba(66, 165, 245, 0.2);
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background: rgba(66, 165, 245, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--white);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(66, 165, 245, 0.3);
-        }
-        
-        .social-link:hover {
-            background: var(--electric-blue);
-            transform: translateY(-5px) scale(1.1);
-            color: var(--dark-blue);
-            box-shadow: 0 0 15px var(--electric-blue);
-            border-color: var(--electric-blue);
-        }
-        
-        .copyright {
-            opacity: 0.8;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--electric-blue);
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            z-index: 100;
-            text-shadow: 0 0 10px var(--electric-blue);
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-20px) translateX(-50%); }
-            60% { transform: translateY(-10px) translateX(-50%); }
-        }
-        
+
         /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero-text h1 {
-                font-size: 3rem;
-            }
-            
-            .profile-img-container {
-                width: 350px;
-                height: 350px;
-            }
-        }
-        
         @media (max-width: 1024px) {
-            .hero-content, .about-content, .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-text {
-                order: 2;
-                text-align: center;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .hero-image {
-                order: 1;
-            }
-            
-            section {
-                padding: 3rem 2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-            }
-            
-            .hero {
-                padding: 6rem 2rem 3rem;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .profile-img-container {
-                width: 280px;
-                height: 280px;
-            }
-            
-            .tech-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .projects-container, .certs-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-buttons {
+            .container {
                 flex-direction: column;
-                gap: 1rem;
+                height: auto;
+                min-height: 100vh;
             }
-            
-            .btn {
+
+            .sidebar {
                 width: 100%;
-                justify-content: center;
+                padding: 1.5rem;
+                border-right: none;
+                border-bottom: 1px solid var(--github-border);
             }
-            
-            .project-links {
-                flex-direction: column;
+
+            .profile {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                text-align: left;
+            }
+
+            .profile-img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 0;
+            }
+
+            .profile-details {
+                flex: 1;
+            }
+
+            .profile-links {
+                justify-content: flex-start;
+                margin-bottom: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: wrap;
                 gap: 0.5rem;
             }
-            
-            .project-link {
-                width: 100%;
+
+            .nav-link {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .contact-info {
+                display: none;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile {
+                flex-direction: column;
                 text-align: center;
             }
-            
-            .section-title h2 {
-                font-size: 2rem;
+
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .project-link {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Cyberpunk Glow Effect -->
-    <div class="cyber-glow"></div>
-    
-    <!-- Circuit Grid Background -->
-    <div class="circuit-grid"></div>
-    
-    <!-- Particle Background -->
-    <div class="particles-bg" id="particlesBg"></div>
-    
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <h2>Ritu Rajput</h2>
-        </div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Hi, I'm <span>Ritu Rajput</span></h1>
-                <p>Cloud Architect | Full Stack Developer | DevOps Engineer</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Contact Me
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                        <i class="fas fa-code"></i> View Projects
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-img-container">
-                    <img src="https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/pro.jpeg" alt="Ritu Rajput" class="profile-img">
-                    <div class="tech-icons">
-                        <div class="tech-icon" style="top: 10%; left: 10%;"><i class="fab fa-aws"></i></div>
-                        <div class="tech-icon" style="top: 10%; right: 10%;"><i class="fab fa-docker"></i></div>
-                        <div class="tech-icon" style="bottom: 10%; left: 10%;"><i class="fab fa-js"></i></div>
-                        <div class="tech-icon" style="bottom: 10%; right: 10%;"><i class="fab fa-python"></i></div>
-                        <div class="tech-icon" style="top: 50%; left: 0; transform: translateY(-50%);"><i class="fas fa-database"></i></div>
-                        <div class="tech-icon" style="top: 50%; right: 0; transform: translateY(-50%);"><i class="fab fa-react"></i></div>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <img src="https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/pro.jpeg" alt="Ritu Rajput" class="profile-img">
+                <div class="profile-details">
+                    <h1>Ritu Rajput</h1>
+                    <p>Cloud Architect | Full Stack Developer</p>
+                    <div class="profile-links">
+                        <a href="https://github.com/ritu-pixel" target="_blank" class="profile-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/ritu-rajput-531610256" target="_blank" class="profile-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:riturajput1801@gmail.com" class="profile-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-<section id="about">
-    <div class="section-title">
-        <h2>About Me</h2>
-    </div>
-    <div class="about-content">
-        <!-- Animated Terminal Window -->
-        <div class="terminal-container">
-            <div class="terminal-header">
-                <div class="terminal-buttons">
-                    <span class="terminal-btn red"></span>
-                    <span class="terminal-btn yellow"></span>
-                    <span class="terminal-btn green"></span>
+
+            <div class="nav-links">
+                <a href="#about" class="nav-link active" data-tab="about">
+                    <i class="fas fa-user"></i> About
+                </a>
+                <a href="#experience" class="nav-link" data-tab="experience">
+                    <i class="fas fa-briefcase"></i> Experience
+                </a>
+                <a href="#projects" class="nav-link" data-tab="projects">
+                    <i class="fas fa-code"></i> Projects
+                </a>
+                <a href="#certifications" class="nav-link" data-tab="certifications">
+                    <i class="fas fa-certificate"></i> Certifications
+                </a>
+                <a href="#contact" class="nav-link" data-tab="contact">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:9773018275">+91 9773018275</a>
                 </div>
-                <div class="terminal-title">cloud_dev@riturajput:~</div>
-            </div>
-            <div class="terminal-body" id="typewriter">
-                <div class="terminal-line"><span class="prompt">$</span> whoami</div>
-                <div class="terminal-line output">Ritu Rajput - Cloud & DevOps Engineer</div>
-                <div class="terminal-line"><span class="prompt">$</span> cat about_me.txt</div>
-                <div class="terminal-line output">Computer Science student specializing in Cloud Computing and Virtualization Technology at UPES, Dehradun.</div>
-                <div class="terminal-line output">Passionate about architecting scalable cloud solutions and automating infrastructure.</div>
-                <div class="terminal-line output">AWS-certified professional with expertise in containerization and CI/CD pipelines.</div>
-                <div class="terminal-line"><span class="prompt">$</span> <span class="cursor">|</span></div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:riturajput1801@gmail.com">riturajput1801@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/ritu-pixel" target="_blank">github.com/ritu-pixel</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/ritu-rajput-531610256" target="_blank">linkedin.com/in/ritu-rajput</a>
+                </div>
             </div>
         </div>
 
-        <!-- 3D Tech Stack Sphere -->
-        <div class="tech-sphere-container">
-            <div class="tech-sphere" id="techSphere">
-                <!-- Tech icons will be positioned here by JavaScript -->
-            </div>
-            <div class="tech-sphere-controls">
-                <div class="sphere-legend">
-                    <div class="legend-item"><span class="legend-color cloud"></span> Cloud Tech</div>
-                    <div class="legend-item"><span class="legend-color frontend"></span> Frontend</div>
-                    <div class="legend-item"><span class="legend-color backend"></span> Backend</div>
-                    <div class="legend-item"><span class="legend-color data"></span> Data/ML</div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- About Tab -->
+            <div id="about" class="tab-content active">
+                <div class="about-section">
+                    <div class="about-header">
+                        <h2>About Me</h2>
+                        <p>Computer Science student specializing in Cloud Computing and Virtualization Technology at UPES, Dehradun. AWS-certified professional with expertise in containerization and CI/CD pipelines.</p>
+                    </div>
+
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>Cloud Technologies</h3>
+                            <div class="skill-list">
+                                <span class="skill">AWS</span>
+                                <span class="skill">Docker</span>
+                                <span class="skill">Kubernetes</span>
+                                <span class="skill">Terraform</span>
+                                <span class="skill">CI/CD</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Frontend</h3>
+                            <div class="skill-list">
+                                <span class="skill">React</span>
+                                <span class="skill">JavaScript</span>
+                                <span class="skill">HTML5</span>
+                                <span class="skill">CSS3</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Backend</h3>
+                            <div class="skill-list">
+                                <span class="skill">Node.js</span>
+                                <span class="skill">Python</span>
+                                <span class="skill">PostgreSQL</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Data/ML</h3>
+                            <div class="skill-list">
+                                <span class="skill">PyTorch</span>
+                                <span class="skill">Evidently</span>
+                                <span class="skill">Pipelines</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button class="sphere-toggle" id="spinToggle">Pause Rotation</button>
+            </div>
+
+            <!-- Experience Tab -->
+            <div id="experience" class="tab-content">
+                <div class="experience-container">
+                    <div class="experience-card">
+                        <div class="exp-header">
+                            <div class="exp-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="exp-title">
+                                <h3>B.Tech Computer Science</h3>
+                                <p>UPES, Dehradun</p>
+                            </div>
+                        </div>
+                        <div class="exp-date">2022 - 2026</div>
+                        <div class="exp-description">
+                            <p>Specializing in Cloud Computing and Virtualization Technology (CCVT). Current CGPA: 7.34</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <div class="exp-header">
+                            <div class="exp-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="exp-title">
+                                <h3>Higher Secondary</h3>
+                                <p>St. Ann's School</p>
+                            </div>
+                        </div>
+                        <div class="exp-date">2018 - 2019</div>
+                        <div class="exp-description">
+                            <p>Percentage: 93.8%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <div class="exp-header">
+                            <div class="exp-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="exp-title">
+                                <h3>Secondary School</h3>
+                                <p>St. Ann's School</p>
+                            </div>
+                        </div>
+                        <div class="exp-date">2020 - 2021</div>
+                        <div class="exp-description">
+                            <p>Percentage: 77.8%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <div class="exp-header">
+                            <div class="exp-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="exp-title">
+                                <h3>Srijan Social Intern</h3>
+                                <p>Saptrangi Institute</p>
+                            </div>
+                        </div>
+                        <div class="exp-date">June 2023 - July 2023</div>
+                        <div class="exp-description">
+                            <p>Designed and implemented engaging lesson plans, conducted interactive sessions, and developed teaching methodologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Tab -->
+            <!-- Projects Tab -->
+<div id="projects" class="tab-content">
+    <div class="projects-container">
+        <!-- Docker Projects -->
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/containerized%20sql.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">SQL</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Containerized SQL</h3>
+                <p>Docker container setup for SQL databases with persistent storage and automated backups.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Containerized-sql" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker-bake.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Automation</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Docker Bake</h3>
+                <p>Automated multi-architecture Docker image building with GitHub Actions.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Docker%20Bake" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20bridge%20networking.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Networking</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Docker Bridge Networking</h3>
+                <p>Custom bridge networks for secure container communication with DNS resolution.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Docker%20Bridge%20Networking" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20swarm.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Docker Swarm</span>
+                    <span class="tech-badge">Microservices</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Docker Swarm Microservices</h3>
+                <p>Highly available microservices architecture with load balancing and service discovery.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Docker%20Swarm%20Microservices" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20volume%20persistence.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Storage</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Docker Volume Persistence</h3>
+                <p>Persistent storage solutions with Docker volumes and NFS backups.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Docker-Volume-Persistence" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20streamlit.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Streamlit</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Dockerized Streamlit</h3>
+                <p>Production-ready Streamlit apps with Docker Compose and CI/CD pipelines.</p>
+                <div class="project-links">
+                    <a href="https://app-2-ckdappsbvut4oeabehhjtpy.streamlit.app/" class="project-link demo-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Dockerized%20Streamlit%20Development%20Environment" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kubernetes Projects -->
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/minikube.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Kubernetes</span>
+                    <span class="tech-badge">Minikube</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>MiniKube and Kubectl</h3>
+                <p>Local Kubernetes development environment with custom resource definitions.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/MiniKubes%20and%20Kubectle" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/microserviceskubetcl.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Kubernetes</span>
+                    <span class="tech-badge">Microservices</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Minikube Microservices</h3>
+                <p>Kubernetes-native microservices with ingress controllers and horizontal pod autoscaling.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Minikube%20Microservices" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Python Projects -->
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/Screenshot%202025-03-31%20225308.png');">
+                <div class="project-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Docker</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Python Logging in Docker</h3>
+                <p>Centralized logging solution for Python apps with ELK stack integration.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Python-logging-Docker" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Streamlit Projects -->
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/streamlit-logo-secondary-colormark-darktext.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Streamlit</span>
+                    <span class="tech-badge">AWS</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Streamlit EC2</h3>
+                <p>Auto-scaling Streamlit applications on AWS with Terraform provisioning.</p>
+                <div class="project-links">
+                    <a href="https://docknest-fazewmfro2peqhq3bahmrc.streamlit.app/" class="project-link demo-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Streamlit%20EC2" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card"> 
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/streamlitt.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Streamlit</span>
+                    <span class="tech-badge">Python</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Streamlit Hello World</h3>
+                <p>Template for building production-grade Streamlit applications.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Streamlit_Hello-world" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20streamlit.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Streamlit</span>
+                    <span class="tech-badge">Docker</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Streamlit App</h3>
+                <p>Multi-container Streamlit application with Redis caching and Celery tasks.</p>
+                <div class="project-links">
+                    <a href="https://docknest-ypsrcfmkvjokuc2dnmpcm8.streamlit.app/" class="project-link demo-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/streamlit-app" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker-bake.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Streamlit</span>
+                    <span class="tech-badge">Docker</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Bakery with AMI</h3>
+                <p>Docker-Bakery with EC2-AMI</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Docker-Bakery%20with%20AWS%20AMI" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Database Projects -->
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/PostgreSQL-Logo-500x313.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">SQL</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>SQL PostgreSQL</h3>
+                <p>Database optimization techniques and advanced query patterns.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/sql-postgresql" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ML Projects -->
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/tpm.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">Machine Learning</span>
+                    <span class="tech-badge">Python</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Titanic Prediction Model</h3>
+                <p>End-to-end ML pipeline with feature engineering and model explainability.</p>
+                <div class="project-links">
+                    <a href="https://docknest-jm7n5epjlpfny7jveon7xs.streamlit.app/" class="project-link demo-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Titanic-Prediction-Model" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/evidently%20ai.webp');">
+                <div class="project-tech">
+                    <span class="tech-badge">ML Monitoring</span>
+                    <span class="tech-badge">Evidently AI</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Evidently AI</h3>
+                <p>Production ML monitoring with data drift detection and performance metrics.</p>
+                <div class="project-links">
+                    <a href="https://github.com/ritu-pixel/DockNest/tree/main/Evidently%20AI" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Project -->
+        <div class="project-card">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/Screenshot%202025-04-01%20011903.png');">
+                <div class="project-tech">
+                    <span class="tech-badge">Streamlit</span>
+                    <span class="tech-badge">ML Pipeline</span>
+                    <span class="tech-badge">Docker</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>ML Pipeline Dashboard</h3>
+                <p>A production-grade ML application featuring containerized microservices architecture, automated data validation, and CI/CD deployment pipeline.</p>
+                <div class="project-links">
+                    <a href="https://multipage-application.onrender.com/" class="project-link demo-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/ritu-pixel/MultiPage-" class="project-link code-link" target="_blank">
+                        <i class="fab fa-github"></i>Code
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</section>
-
-<style>
-    /* Terminal Styles */
-    .terminal-container {
-        background: rgba(10, 25, 47, 0.8);
-        border-radius: 10px;
-        box-shadow: 0 0 30px rgba(0, 209, 255, 0.3);
-        border: 1px solid var(--electric-blue);
-        overflow: hidden;
-        margin-bottom: 2rem;
-    }
-
-    .terminal-header {
-        background: rgba(13, 71, 161, 0.5);
-        padding: 0.5rem 1rem;
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid var(--electric-blue);
-    }
-
-    .terminal-buttons {
-        display: flex;
-        gap: 0.5rem;
-    }
-
-    .terminal-btn {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        display: inline-block;
-    }
-
-    .terminal-btn.red {
-        background: #ff5f56;
-    }
-
-    .terminal-btn.yellow {
-        background: #ffbd2e;
-    }
-
-    .terminal-btn.green {
-        background: #27c93f;
-    }
-
-    .terminal-title {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.8rem;
-        margin-left: 1rem;
-        font-family: 'Courier New', monospace;
-    }
-
-    .terminal-body {
-        padding: 1.5rem;
-        font-family: 'Courier New', monospace;
-        line-height: 1.8;
-        min-height: 250px;
-    }
-
-    .terminal-line {
-        margin-bottom: 0.5rem;
-        color: var(--electric-blue);
-    }
-
-    .terminal-line.output {
-        color: rgba(255, 255, 255, 0.8);
-        margin-left: 2rem;
-    }
-
-    .prompt {
-        color: #27c93f;
-        margin-right: 0.5rem;
-    }
-
-    .cursor {
-        animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-
-    /* 3D Tech Sphere Styles */
-    .tech-sphere-container {
-        position: relative;
-        perspective: 1000px;
-        height: 400px;
-        margin-top: 2rem;
-    }
-
-    .tech-sphere {
-        position: relative;
-        width: 300px;
-        height: 300px;
-        margin: 0 auto;
-        transform-style: preserve-3d;
-        animation: rotateSphere 20s infinite linear;
-    }
-
-    .tech-icon-3d {
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        background: rgba(10, 25, 47, 0.9);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        color: var(--electric-blue);
-        border: 2px solid var(--electric-blue);
-        box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
-        transform-origin: center;
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-
-    .tech-icon-3d:hover {
-        transform: scale(1.2) translateZ(20px);
-        box-shadow: 0 0 25px var(--electric-blue);
-    }
-
-    .tech-icon-3d.cloud {
-        border-color: #00D1FF;
-        color: #00D1FF;
-    }
-
-    .tech-icon-3d.frontend {
-        border-color: #42A5F5;
-        color: #42A5F5;
-    }
-
-    .tech-icon-3d.backend {
-        border-color: #BB86FC;
-        color: #BB86FC;
-    }
-
-    .tech-icon-3d.data {
-        border-color: #03DAC6;
-        color: #03DAC6;
-    }
-
-    .tech-sphere-controls {
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-    .sphere-legend {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .legend-item {
-        display: flex;
-        align-items: center;
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.8);
-    }
-
-    .legend-color {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin-right: 0.5rem;
-        display: inline-block;
-    }
-
-    .legend-color.cloud {
-        background: #00D1FF;
-    }
-
-    .legend-color.frontend {
-        background: #42A5F5;
-    }
-
-    .legend-color.backend {
-        background: #BB86FC;
-    }
-
-    .legend-color.data {
-        background: #03DAC6;
-    }
-
-    .sphere-toggle {
-        background: rgba(66, 165, 245, 0.1);
-        color: var(--electric-blue);
-        border: 1px solid var(--electric-blue);
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .sphere-toggle:hover {
-        background: var(--electric-blue);
-        color: var(--dark-blue);
-    }
-
-    @keyframes rotateSphere {
-        0% { transform: rotateY(0deg) rotateX(10deg); }
-        100% { transform: rotateY(360deg) rotateX(10deg); }
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .tech-sphere {
-            width: 250px;
-            height: 250px;
-        }
+</div>
         
-        .tech-icon-3d {
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-        }
+<style>
+    /* Add this CSS to make the projects more compact */
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .project-card {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+        background: #161b22(27, 26, 26, 0.708);
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .project-image {
+        height: 120px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .project-info {
+        padding: 12px;
+    }
+    
+    .project-info h3 {
+        margin: 0 0 8px 0;
+        font-size: 1rem;
+    }
+    
+    .project-info p {
+        margin: 0 0 12px 0;
+        font-size: 0.85rem;
+        color: #555;
+        line-height: 1.4;
+    }
+    
+    .project-links {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        text-decoration: none;
+    }
+    
+    .demo-link {
+        background: #4CAF50;
+        color: white;
+    }
+    
+    .code-link {
+        background: #333;
+        color: white;
+    }
+    
+    .project-link i {
+        font-size: 0.8rem;
     }
 </style>
 
-<script>
-    // Typewriter Effect
-    const typewriterLines = [
-        { text: "whoami", type: "command" },
-        { text: "Ritu Rajput - Cloud & DevOps Engineer", type: "output" },
-        { text: "cat about_me.txt", type: "command" },
-        { text: "Computer Science student specializing in Cloud Computing and Virtualization Technology at UPES, Dehradun.", type: "output" },
-        { text: "Passionate about architecting scalable cloud solutions and automating infrastructure.", type: "output" },
-        { text: "AWS-certified professional with expertise in containerization and CI/CD pipelines.", type: "output" }
-    ];
-
-    const terminal = document.getElementById('typewriter');
-    let currentLine = 0;
-    let currentChar = 0;
-    let isDeleting = false;
-    let isWaiting = false;
-
-    function typeWriter() {
-        if (currentLine >= typewriterLines.length) {
-            // Add blinking cursor to last line
-            terminal.innerHTML += `<div class="terminal-line"><span class="prompt">$</span> <span class="cursor">|</span></div>`;
-            return;
-        }
-
-        const line = typewriterLines[currentLine];
-        
-        if (!isDeleting && currentChar <= line.text.length) {
-            // Typing
-            const currentText = line.text.substring(0, currentChar);
-            if (currentChar === 0) {
-                terminal.innerHTML += `<div class="terminal-line">${line.type === 'command' ? '<span class="prompt">$</span> ' : ''}${currentText}</div>`;
-            } else {
-                const lastLine = terminal.lastElementChild;
-                lastLine.innerHTML = `${line.type === 'command' ? '<span class="prompt">$</span> ' : ''}${currentText}`;
-            }
-            currentChar++;
-            setTimeout(typeWriter, Math.random() * 50 + 50);
-        } else if (isDeleting && currentChar >= 0) {
-            // Deleting (not used in this case)
-            const currentText = line.text.substring(0, currentChar);
-            terminal.lastElementChild.innerHTML = currentText;
-            currentChar--;
-            setTimeout(typeWriter, 30);
-        } else {
-            // Move to next line
-            isDeleting = false;
-            currentLine++;
-            currentChar = 0;
-            
-            if (currentLine < typewriterLines.length) {
-                isWaiting = true;
-                setTimeout(typeWriter, 1000);
-            }
-        }
-    }
-
-    // Start typewriter effect
-    setTimeout(typeWriter, 1000);
-
-    // 3D Tech Sphere
-    const techSphere = document.getElementById('techSphere');
-    const spinToggle = document.getElementById('spinToggle');
-    let isSpinning = true;
-
-    // Tech icons data (category: cloud, frontend, backend, data)
-    const techIcons = [
-        { icon: 'fab fa-aws', name: 'AWS', category: 'cloud' },
-        { icon: 'fab fa-docker', name: 'Docker', category: 'cloud' },
-        { icon: 'fas fa-server', name: 'K8s', category: 'cloud' },
-        { icon: 'fas fa-cloud', name: 'Terraform', category: 'cloud' },
-        { icon: 'fas fa-code-branch', name: 'CI/CD', category: 'cloud' },
-        { icon: 'fab fa-react', name: 'React', category: 'frontend' },
-        { icon: 'fab fa-js', name: 'JavaScript', category: 'frontend' },
-        { icon: 'fab fa-html5', name: 'HTML5', category: 'frontend' },
-        { icon: 'fab fa-css3-alt', name: 'CSS3', category: 'frontend' },
-        { icon: 'fab fa-node-js', name: 'Node.js', category: 'backend' },
-        { icon: 'fab fa-python', name: 'Python', category: 'backend' },
-        { icon: 'fas fa-database', name: 'PostgreSQL', category: 'backend' },
-        { icon: 'fas fa-brain', name: 'PyTorch', category: 'data' },
-        { icon: 'fas fa-chart-line', name: 'Evidently', category: 'data' },
-        { icon: 'fas fa-project-diagram', name: 'Pipelines', category: 'data' }
-    ];
-
-    // Position icons on sphere
-    function positionIcons() {
-        const radius = 150;
-        const count = techIcons.length;
-        
-        techIcons.forEach((tech, i) => {
-            const phi = Math.acos(-1 + (2 * i) / count);
-            const theta = Math.sqrt(count * Math.PI) * phi;
-            
-            const x = radius * Math.cos(theta) * Math.sin(phi);
-            const y = radius * Math.sin(theta) * Math.sin(phi);
-            const z = radius * Math.cos(phi);
-            
-            const icon = document.createElement('div');
-            icon.className = `tech-icon-3d ${tech.category}`;
-            icon.innerHTML = `<i class="${tech.icon}" title="${tech.name}"></i>`;
-            
-            icon.style.transform = `translate3d(${x}px, ${y}px, ${z}px) rotateY(${theta}rad)`;
-            
-            techSphere.appendChild(icon);
-        });
-    }
-
-    // Toggle sphere rotation
-    spinToggle.addEventListener('click', () => {
-        isSpinning = !isSpinning;
-        if (isSpinning) {
-            techSphere.style.animationPlayState = 'running';
-            spinToggle.textContent = 'Pause Rotation';
-        } else {
-            techSphere.style.animationPlayState = 'paused';
-            spinToggle.textContent = 'Resume Rotation';
-        }
-    });
-
-    // Initialize sphere
-    positionIcons();
-
-    // Make icons draggable for manual rotation
-    let isDragging = false;
-    let previousMousePosition = { x: 0, y: 0 };
-    let rotation = { x: 10, y: 0 };
-
-    techSphere.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        previousMousePosition = { x: e.clientX, y: e.clientY };
-    });
-
-    window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        
-        const deltaX = e.clientX - previousMousePosition.x;
-        const deltaY = e.clientY - previousMousePosition.y;
-        
-        rotation.y += deltaX * 0.5;
-        rotation.x += deltaY * 0.5;
-        
-        techSphere.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
-        
-        previousMousePosition = { x: e.clientX, y: e.clientY };
-    });
-
-    window.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
-</script>
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="section-title">
-            <h2>Education & Experience</h2>
-        </div>
-        <div class="experience-container">
-            <div class="experience-card">
-                <div class="exp-header">
-                    <div class="exp-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="exp-title">
-                        <h3>B.Tech Computer Science</h3>
-                        <p>UPES, Dehradun</p>
-                    </div>
-                </div>
-                <div class="exp-date">2022 - 2026</div>
-                <div class="exp-description">
-                    <p>Specializing in Cloud Computing and Virtualization Technology (CCVT). Current CGPA: 7.34</p>
-                </div>
-            </div>
-            
-            <div class="experience-card">
-                <div class="exp-header">
-                    <div class="exp-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <div class="exp-title">
-                        <h3>Higher Secondary</h3>
-                        <p>St. Ann's School</p>
-                    </div>
-                </div>
-                <div class="exp-date">2018 - 2019</div>
-                <div class="exp-description">
-                    <p>Percentage: 93.8%</p>
-                </div>
-            </div>
-            
-            <div class="experience-card">
-                <div class="exp-header">
-                    <div class="exp-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <div class="exp-title">
-                        <h3>Secondary School</h3>
-                        <p>St. Ann's School</p>
-                    </div>
-                </div>
-                <div class="exp-date">2020 - 2021</div>
-                <div class="exp-description">
-                    <p>Percentage: 77.8%</p>
-                </div>
-            </div>
-            
-            <div class="experience-card">
-                <div class="exp-header">
-                    <div class="exp-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="exp-title">
-                        <h3>Srijan Social Intern</h3>
-                        <p>Saptrangi Institute</p>
-                    </div>
-                </div>
-                <div class="exp-date">June 2023 - July 2023</div>
-                <div class="exp-description">
-                    <p>Designed and implemented engaging lesson plans, conducted interactive sessions, and developed teaching methodologies.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="section-title">
-            <h2>Cloud Projects</h2>
-        </div>
-        <div class="projects-container">
-            <!-- Docker Projects -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/containerized%20sql.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">SQL</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Containerized SQL</h3>
-                    <p>Docker container setup for SQL databases with persistent storage and automated backups.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Containerized-sql" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker-bake.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">Automation</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Docker Bake</h3>
-                    <p>Automated multi-architecture Docker image building with GitHub Actions.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Docker%20Bake" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20bridge%20networking.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">Networking</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Docker Bridge Networking</h3>
-                    <p>Custom bridge networks for secure container communication with DNS resolution.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Docker%20Bridge%20Networking" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20swarm.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Docker Swarm</span>
-                        <span class="tech-badge">Microservices</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Docker Swarm Microservices</h3>
-                    <p>Highly available microservices architecture with load balancing and service discovery.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Docker%20Swarm%20Microservices" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20volume%20persistence.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">Storage</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Docker Volume Persistence</h3>
-                    <p>Persistent storage solutions with Docker volumes and NFS backups.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Docker-Volume-Persistence" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20streamlit.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">Streamlit</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Dockerized Streamlit</h3>
-                    <p>Production-ready Streamlit apps with Docker Compose and CI/CD pipelines.</p>
-                    <div class="project-links">
-                        <a href="https://app-2-ckdappsbvut4oeabehhjtpy.streamlit.app/" class="project-link demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Dockerized%20Streamlit%20Development%20Environment" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kubernetes Projects -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/minikube.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Kubernetes</span>
-                        <span class="tech-badge">Minikube</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>MiniKube and Kubectl</h3>
-                    <p>Local Kubernetes development environment with custom resource definitions.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/MiniKubes%20and%20Kubectle" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/microserviceskubetcl.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Kubernetes</span>
-                        <span class="tech-badge">Microservices</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Minikube Microservices</h3>
-                    <p>Kubernetes-native microservices with ingress controllers and horizontal pod autoscaling.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Minikube%20Microservices" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Python Projects -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/Screenshot%202025-03-31%20225308.png');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Docker</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Python Logging in Docker</h3>
-                    <p>Centralized logging solution for Python apps with ELK stack integration.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Python-logging-Docker" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Streamlit Projects -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/streamlit-logo-secondary-colormark-darktext.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Streamlit</span>
-                        <span class="tech-badge">AWS</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Streamlit EC2</h3>
-                    <p>Auto-scaling Streamlit applications on AWS with Terraform provisioning.</p>
-                    <div class="project-links">
-                        <a href="https://docknest-fazewmfro2peqhq3bahmrc.streamlit.app/" class="project-link demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Streamlit%20EC2" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card"> 
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/streamlitt.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Streamlit</span>
-                        <span class="tech-badge">Python</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Streamlit Hello World</h3>
-                    <p>Template for building production-grade Streamlit applications.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Streamlit_Hello-world" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/docker%20streamlit.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Streamlit</span>
-                        <span class="tech-badge">Docker</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Streamlit App</h3>
-                    <p>Multi-container Streamlit application with Redis caching and Celery tasks.</p>
-                    <div class="project-links">
-                        <a href="https://docknest-ypsrcfmkvjokuc2dnmpcm8.streamlit.app/" class="project-link demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                         <a href="https://github.com/ritu-pixel/DockNest/tree/main/streamlit-app" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Database Projects -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/PostgreSQL-Logo-500x313.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">PostgreSQL</span>
-                        <span class="tech-badge">SQL</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>SQL PostgreSQL</h3>
-                    <p>Database optimization techniques and advanced query patterns.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/sql-postgresql" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ML Projects -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/tpm.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Machine Learning</span>
-                        <span class="tech-badge">Python</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Titanic Prediction Model</h3>
-                    <p>End-to-end ML pipeline with feature engineering and model explainability.</p>
-                    <div class="project-links">
-                        <a href="https://docknest-jm7n5epjlpfny7jveon7xs.streamlit.app/" class="project-link demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Titanic-Prediction-Model" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/evidently%20ai.webp');">
-                    <div class="project-tech">
-                        <span class="tech-badge">ML Monitoring</span>
-                        <span class="tech-badge">Evidently AI</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Evidently AI</h3>
-                    <p>Production ML monitoring with data drift detection and performance metrics.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ritu-pixel/DockNest/tree/main/Evidently%20AI" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Featured Project -->
-            <div class="project-card featured-project">
-                <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/ritu-pixel/Profile/refs/heads/main/Screenshot%202025-04-01%20011903.png');">
-                    <div class="project-tech">
-                        <span class="tech-badge">Streamlit</span>
-                        <span class="tech-badge">ML Pipeline</span>
-                        <span class="tech-badge">Docker</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>ML Pipeline Dashboard</h3>
-                    <p class="featured-badge">Featured Project</p>
-                    <p>A production-grade ML application featuring:</p>
-                    <ul>
-                        <li>Containerized microservices architecture</li>
-                        <li>Automated data validation</li>
-                        <li>Model performance tracking</li>
-                        <li>CI/CD deployment pipeline</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://multipage-application.onrender.com/" class="project-link demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/ritu-pixel/MultiPage-" class="project-link code-link" target="_blank">
-                            <i class="fab fa-github"></i> Source Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Certifications Section -->
-    <section id="certifications">
-        <div class="section-title">
-            <h2>Cloud Certifications</h2>
-        </div>
-        <div class="certs-container">
-            <div class="cert-card">
-                <div class="cert-header">
-                    <i class="fab fa-aws"></i>
-                    <h3>AWS Academy Graduate</h3>
-                </div>
-                <div class="cert-body">
-                    <h3>Cloud Architecting</h3>
-                    <p>Advanced AWS services, multi-tier architectures, high availability, fault tolerance, and cost optimization strategies.</p>
-                    <a href="#" class="view-cert">View Credential</a>
-                </div>
-            </div>
-            
-            <div class="cert-card">
-                <div class="cert-header">
-                    <i class="fab fa-aws"></i>
-                    <h3>AWS Academy Graduate</h3>
-                </div>
-                <div class="cert-body">
-                    <h3>Cloud Practitioner Essentials</h3>
-                    <p>AWS Cloud concepts, core services, security, architecture, pricing models, and support plans.</p>
-                    <a href="#" class="view-cert">View Credential</a>
-                </div>
-            </div>
-            
-            <div class="cert-card">
-                <div class="cert-header">
-                    <i class="fab fa-aws"></i>
-                    <h3>AWS Academy Graduate</h3>
-                </div>
-                <div class="cert-body">
-                    <h3>Introduction to Cloud</h3>
-                    <p>Fundamental cloud computing concepts, AWS global infrastructure, and core services overview.</p>
-                    <a href="#" class="view-cert">View Credential</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-title">
-            <h2>Get In Touch</h2>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Phone</h3>
-                        <a href="tel:9773018275">+91 9773018275</a>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>LinkedIn</h3>
-                        <a href="https://linkedin.com/in/ritu-rajput-531610256" target="_blank">linkedin.com/in/ritu-rajput</a>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>GitHub</h3>
-                        <a href="https://github.com/ritu-pixel" target="_blank">github.com/ritu-pixel</a>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Email</h3>
-                        <a href="mailto:riturajput1801@gmail.com">riturajput1801@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" class="form-control" required>
+            <!-- Certifications Tab -->
+            <div id="certifications" class="tab-content">
+                <div class="certs-container">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <i class="fab fa-aws"></i>
+                            <h3>AWS Academy Graduate</h3>
+                        </div>
+                        <div class="cert-body">
+                            <h3>Cloud Architecting</h3>
+                            <p>Advanced AWS services, multi-tier architectures, high availability, fault tolerance, and cost optimization strategies.</p>
+                            <a href="#" class="view-cert">View Credential</a>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" class="form-control" required>
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <i class="fab fa-aws"></i>
+                            <h3>AWS Academy Graduate</h3>
+                        </div>
+                        <div class="cert-body">
+                            <h3>Cloud Practitioner Essentials</h3>
+                            <p>AWS Cloud concepts, core services, security, architecture, pricing models, and support plans.</p>
+                            <a href="#" class="view-cert">View Credential</a>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" class="form-control" required>
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <i class="fab fa-aws"></i>
+                            <h3>AWS Academy Graduate</h3>
+                        </div>
+                        <div class="cert-body">
+                            <h3>Introduction to Cloud</h3>
+                            <p>Fundamental cloud computing concepts, AWS global infrastructure, and core services overview.</p>
+                            <a href="#" class="view-cert">View Credential</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Tab -->
+            <div id="contact" class="tab-content">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <a href="tel:9773018275">+91 9773018275</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>LinkedIn</h3>
+                                <a href="https://linkedin.com/in/ritu-rajput-531610256" target="_blank">linkedin.com/in/ritu-rajput</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/ritu-pixel" target="_blank">github.com/ritu-pixel</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <a href="mailto:riturajput1801@gmail.com">riturajput1801@gmail.com</a>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" class="form-control" required></textarea>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
                     </div>
-                    
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="mailto:riturajput1801@gmail.com" class="social-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://linkedin.com/in/ritu-rajput-531610256" class="social-link" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/ritu-pixel" class="social-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="tel:9773018275" class="social-link">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </div>
-            <p class="copyright">© 2024 Ritu Rajput. All Rights Reserved.</p>
-        </div>
-    </footer>
-    
+    </div>
+
     <script>
-        // Generate random particles
-        const particlesBg = document.getElementById('particlesBg');
-        for (let i = 0; i < 100; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            // Random size
-            const size = Math.random() * 5 + 1;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            
-            // Random position
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.top = `${Math.random() * 100}%`;
-            
-            // Random animation
-            const duration = Math.random() * 20 + 10;
-            const delay = Math.random() * -20;
-            particle.style.animation = `floatCloud ${duration}s linear ${delay}s infinite`;
-            
-            particlesBg.appendChild(particle);
-        }
-        
+        // Tab switching functionality
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links and tabs
+                document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Show corresponding tab
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -2083,118 +1361,16 @@
             // For demo purposes, we'll just log it and show an alert
             console.log({ name, email, subject, message });
             
-            // Create a cool cyberpunk-style notification
-            const notification = document.createElement('div');
-            notification.style.position = 'fixed';
-            notification.style.bottom = '30px';
-            notification.style.right = '30px';
-            notification.style.padding = '1rem 2rem';
-            notification.style.background = 'rgba(10, 25, 47, 0.9)';
-            notification.style.border = '1px solid var(--electric-blue)';
-            notification.style.borderRadius = '5px';
-            notification.style.color = 'var(--electric-blue)';
-            notification.style.boxShadow = '0 0 20px var(--electric-blue)';
-            notification.style.zIndex = '1000';
-            notification.style.transform = 'translateX(200%)';
-            notification.style.transition = 'transform 0.5s ease';
-            notification.innerHTML = `
-                <p style="margin-bottom: 0.5rem; font-weight: 600;">Message Sent!</p>
-                <p style="font-size: 0.9rem; opacity: 0.8;">I'll get back to you soon</p>
-            `;
+            // Show success message
+            alert('Message sent successfully! I will get back to you soon.');
             
-            document.body.appendChild(notification);
-            
-            // Animate in
-            setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 100);
-            
-            // Animate out after 5 seconds
-            setTimeout(() => {
-                notification.style.transform = 'translateX(200%)';
-                setTimeout(() => {
-                    notification.remove();
-                }, 500);
-            }, 5000);
-            
+            // Reset form
             this.reset();
         });
-        
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Scroll indicator click handler
-        document.querySelector('.scroll-indicator').addEventListener('click', () => {
-            window.scrollTo({
-                top: document.querySelector('#about').offsetTop - 80,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Animate elements when they come into view
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.experience-card, .project-card, .cert-card');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.classList.add('visible');
-                }
-            });
-        };
-        
-        // Add scroll event listener
-        window.addEventListener('scroll', animateOnScroll);
-        // Trigger once on page load
-        animateOnScroll();
-        
-        // Add parallax effect to circuit grid
-        window.addEventListener('mousemove', (e) => {
-            const circuitGrid = document.querySelector('.circuit-grid');
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            circuitGrid.style.transform = `translate(${xAxis}px, ${yAxis}px)`;
-        });
-        
-        // Add interactive glow effect to hero section
-        const heroSection = document.querySelector('.hero');
-        heroSection.addEventListener('mousemove', (e) => {
-            const glow = document.querySelector('.cyber-glow');
-            const x = e.clientX / window.innerWidth * 100;
-            const y = e.clientY / window.innerHeight * 100;
-            glow.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 209, 255, 0.2) 0%, transparent 70%)`;
-        });
-        
-        // Add typing effect to hero text
-        const heroText = document.querySelector('.hero-text p');
-        const originalText = heroText.textContent;
-        heroText.textContent = '';
-        
-        let i = 0;
-        const typingEffect = setInterval(() => {
-            if (i < originalText.length) {
-                heroText.textContent += originalText.charAt(i);
-                i++;
-            } else {
-                clearInterval(typingEffect);
-            }
-        }, 30);
+
+        // Make sure the about tab is active on page load
+        document.querySelector('.nav-link[data-tab="about"]').classList.add('active');
+        document.getElementById('about').classList.add('active');
     </script>
 </body>
 </html>
